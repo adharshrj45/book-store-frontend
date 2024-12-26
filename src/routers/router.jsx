@@ -8,13 +8,13 @@ import CheckoutPage from "../pages/Books/CheckoutPage";
 import SingleBook from "../pages/Books/SingleBook";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/Books/OrderPage";
-import AdminRoute from "./adminRoute";
 import AdminLogin from "../components/AdminLogin";
 import DashboardLayout from "../pages/dashboard/DashboardLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
 import ManageBooks from "../pages/dashboard/ManageBooks";
 import AddBook from "../pages/dashboard/addBook/AddBook";
 import UpdateBook from "../pages/dashboard/EditBook/UpdateBook";
+import AdminRouter from "./AdminRouter";
 
 
  const router =createBrowserRouter([
@@ -38,13 +38,13 @@ import UpdateBook from "../pages/dashboard/EditBook/UpdateBook";
     },
     {
         path:"/dashboard",
-        element:<AdminRoute><DashboardLayout/></AdminRoute>,
+        element:<AdminRouter><DashboardLayout/></AdminRouter>,
         children:[
-            {path:"",element:<AdminRoute><Dashboard/></AdminRoute>},
-            {path:"add-new-book",element:<AdminRoute><AddBook/></AdminRoute>},
-            {path:"edit-book/:id",element:<AdminRoute><UpdateBook/></AdminRoute>},
-            {path:"manage-books",element:<AdminRoute><ManageBooks/></AdminRoute>},
-            {path:"delete-book/:id",element:<AdminRoute><h1>Delete Book</h1></AdminRoute>}
+            {path:"",element:<AdminRouter><Dashboard/></AdminRouter>},
+            {path:"add-new-book",element:<AdminRouter><AddBook/></AdminRouter>},
+            {path:"edit-book/:id",element:<AdminRouter><UpdateBook/></AdminRouter>},
+            {path:"manage-books",element:<AdminRouter><ManageBooks/></AdminRouter>},
+            {path:"delete-book/:id",element:<AdminRouter><h1>Delete Book</h1></AdminRouter>}
         ]
     }
 
